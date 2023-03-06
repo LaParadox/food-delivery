@@ -18,13 +18,17 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import { SideNavComponent } from './sidenav-component/side-nav/side-nav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user-service/user-service';
+import { AuthGuard } from './authGuard/auth-guard';
+import { LoginRegisterComponent } from './login-register/login-register/login-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponentComponent,
     MainPageComponent,
-    SideNavComponent
+    SideNavComponent,
+    LoginRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatDividerModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService, AuthGuard],
   exports: [SideNavComponent, HeaderComponentComponent],
   bootstrap: [AppComponent]
 })
