@@ -31,6 +31,7 @@ export class LoginRegisterComponent implements OnInit {
 
   login() {
     const formVal = this.loginForm.value;
+    console.log(formVal);
     this.userService.login(formVal).subscribe((res) => {
       if (res === formVal) {
         this.router.navigate(["/main"]);
